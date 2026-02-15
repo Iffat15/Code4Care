@@ -38,23 +38,35 @@ structured context to Triage Agent
 
 ### 3.2 Triage Agent
 
-Inputs: - SOS Agent output - Symptoms - Age - Comorbidities
+Inputs: 
+- SOS Agent output - Symptoms - Age - Comorbidities
 
-Outputs: - Required bed type (ICU / Normal) - Oxygen/ventilator
-requirement - Time sensitivity level - Required speciality
+Outputs: 
+- Required bed type (ICU / Normal)
+- Oxygen/ventilator requirement
+- Time sensitivity level
+- Required speciality
 
-Responsibilities: - Perform medical reasoning - Determine level of
-care - Identify high-risk cases
+Responsibilities: 
+- Perform medical reasoning
+- Determine level of care
+- Identify high-risk cases
 
 Human-in-the-loop: - Admin reviews reasoning - Confirmation before
 booking
 
 ### 3.3 Hospital Orchestration Agent
 
-Inputs: - Triage decision - Location - Real-time bed availability -
-Hospital capabilities
+Inputs: 
+- Triage decision
+- Location
+- Real-time bed availability
+- Hospital capabilities
 
-Outputs: - Selected hospital - Recommended bed type - Confidence score
+Outputs: 
+- Selected hospital
+- Recommended bed type
+- Confidence score
 
 Responsibilities: - Evaluate trade-offs - Recommend optimal hospital
 
@@ -62,26 +74,30 @@ Responsibilities: - Evaluate trade-offs - Recommend optimal hospital
 
 Activated only if ambulance required.
 
-Responsibilities: - Select ambulance type (BLS/ALS) - Optimize route -
-Assign staff
+Responsibilities: 
+- Select ambulance type 
+- Optimize route
+- Assign staff
 
 ### 3.5 Form Intelligence Agent
 
-Responsibilities: - Dynamically determine mandatory fields - Auto-fill
-available data - Defer non-critical fields
+Responsibilities: 
+- Dynamically determine mandatory fields
+- Auto-fillavailable data
+- Defer non-critical fields
 
 ### 3.6 Billing & Discharge Agent
 
-Responsibilities: - Simplify billing explanation - Detect anomalies -
-Trigger bed release after clearance
+Responsibilities: 
+- Simplify billing explanation
+- Detect anomalies 
+- Trigger bed release after clearance
 
 ## 4. Non-Functional Requirements
 
--   Response time under 5 seconds for critical decisions
--   99.9% uptime
+-   Maximum uptime
 -   Role-based access control
 -   End-to-end encryption
--   Full audit trail
 
 ## 5. Success Metrics
 
