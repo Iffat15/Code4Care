@@ -20,9 +20,9 @@ Billing Agent
 
 ### 3.1 Presentation Layer
 
--   Mobile/Web App
--   Admin Dashboard
--   Ambulance Console
+-   Patients - Mobile App
+-   Admin Dashboard - Web App
+-   Ambulance Console - Web App
 
 ### 3.2 Agentic Decision Layer
 
@@ -43,8 +43,10 @@ This layer executes but does not reason.
 
 ## 4. Human-in-the-Loop
 
-Checkpoints: 1. Admin reviews triage reasoning 2. Confirmation call
-before booking 3. Billing approval before discharge
+Checkpoints: 
+1. Admin reviews triage reasoning 
+2. Confirmation call before booking 
+3. Billing approval before discharge
 
 ## 5. Scalability Strategy
 
@@ -63,5 +65,4 @@ before booking 3. Billing approval before discharge
 ## 7. Future Enhancements
 
 -   Predictive ICU demand modeling
--   Multi-city ambulance optimization
--   Insurance pre-authorization agent
+-   Intracity Ambulance optimization
