@@ -93,13 +93,33 @@ Each hospital can have multiple bed inventory records (one per bed type).
 Stores ambulance and driver information.
 
 - `id` (Primary Key)
-- `hospital_id` (Foreign Key → Hospitals)
+- `hospital_id` (Foreign Key → Hospitals) or ngo_id
 - `driver_name`
 - `driver_phone`
 - `latitude`
 - `longitude`
 
 Each ambulance belongs to one hospital and can serve multiple bookings over time.
+
+---
+
+
+### 🆕 NGO Ambulance Support
+
+The system supports ambulances from both hospitals and partner NGOs.
+
+- One **Hospital** → Many **Ambulances**
+- One **NGO** → Many **Ambulances**
+- One **Ambulance** → Many **Bookings** (historically)
+
+An ambulance belongs to either:
+- A hospital
+- OR an NGO partner
+
+During SOS dispatch:
+1. The system searches for the nearest available hospital ambulance.
+2. If none are available, it searches for the nearest available NGO ambulance.
+3. The closest available ambulance is assigned to the booking.
 
 ---
 
