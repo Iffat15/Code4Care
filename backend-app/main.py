@@ -1,12 +1,10 @@
 from fastapi import FastAPI
-from database import engine, Base
-from controllers import sos_controller
-from controllers import admin_controller
-
+from database import Base,engine
+from controllers import sos_controller,admin_controller
+from models import user,hospital,booking, bed, ambulance
 app = FastAPI()
 
 Base.metadata.create_all(bind=engine)
-
 
 app.include_router(sos_controller.router)
 app.include_router(admin_controller.router)
