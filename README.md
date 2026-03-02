@@ -5,7 +5,7 @@ The application uses a relational database designed to manage emergency medical 
 ---
 Below is the Entity-Relationship (ER) diagram representing the database structure:
 
-![Database ER Diagram](/backend-app/assets/database_diagram.png)
+![Database ER Diagram](/backend-app/assets/database_diagram_er.png)
 ### 🧩 Core Entities
 
 #### 1️⃣ Users
