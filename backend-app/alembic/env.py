@@ -21,7 +21,7 @@ if config.config_file_name is not None:
 # target_metadata = None
 
 from database import Base
-from models import hospital, bed, ambulance, booking, user
+from models import *
 
 target_metadata = Base.metadata
 

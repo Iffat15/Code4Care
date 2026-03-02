@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from database import Base,engine
 from controllers import sos_controller,admin_controller
-from models import user,hospital,booking, bed, ambulance
+from models import *
 app = FastAPI()
 
 Base.metadata.create_all(bind=engine)

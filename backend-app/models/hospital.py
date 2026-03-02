@@ -1,41 +1,39 @@
-# from sqlalchemy import Column, Integer, String
-# from database import Base
-
-# class Hospital(Base):
-#     __tablename__ = "hospitals"
-
-#     id = Column(Integer, primary_key=True, index=True)
-#     name = Column(String, nullable=False)
-#     location = Column(String, nullable=False)
-
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, Float
 from sqlalchemy.orm import relationship
 from database import Base
 
 
-# class Hospital(Base):
-#     __tablename__ = "hospitals"
-
-#     id = Column(Integer, primary_key=True, index=True)
-#     name = Column(String, nullable=False)
-#     location = Column(String, nullable=False)
-
-#     # Relationships
-#     beds = relationship("Bed", back_populates="hospital", cascade="all, delete")
-#     ambulances = relationship("Ambulance", back_populates="hospital", cascade="all, delete")
-#     bookings = relationship("Booking", back_populates="hospital", cascade="all, delete")
-
 class Hospital(Base):
     __tablename__ = "hospitals"
 
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, index=True)
 
+    # ----------------------------
+    # Core Info
+    # ----------------------------
     name = Column(String(255), nullable=False)
-    latitude = Column(String, nullable=False)
-    longitude = Column(String, nullable=False)
 
-    rating = Column(String(10))
+    latitude = Column(Float, nullable=False)
+    longitude = Column(Float, nullable=False)
 
-    beds = relationship("BedInventory", back_populates="hospital", cascade="all, delete")
-    ambulances = relationship("Ambulance", back_populates="hospital", cascade="all, delete")
-    bookings = relationship("Booking", back_populates="hospital")
+    rating = Column(Float, nullable=True)
+
+    # ----------------------------
+    # Relationships
+    # ----------------------------
+    beds = relationship(
+        "BedInventory",          # Must match your actual bed model name
+        back_populates="hospital",
+        cascade="all, delete-orphan"
+    )
+
+    ambulances = relationship(
+        "Ambulance",
+        back_populates="hospital",
+        cascade="all, delete-orphan"
+    )
+
+    bookings = relationship(
+        "Booking",
+        back_populates="hospital"
+    )
